@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.example.ganeshhegde.youcanforget.activities.DisplaySavedListActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/baseView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:layout_editor_absoluteY="81dp">
+
+        <!--android:animateLayoutChanges="true"-->
+
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetStart="0dp"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_10"
+                android:text="Saved Details List"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_20"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:padding="@dimen/dp_10"
+            android:onClick='@{handlers::onClick}'
+            android:src="@drawable/back_default"
+            app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+            app:layout_constraintStart_toStartOf="@+id/toolBar"
+            app:layout_constraintTop_toTopOf="@+id/toolBar" />
+
+
+        <ImageView
+            android:id="@+id/downloadPdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:onClick='@{handlers::onClick}'
+            android:layout_marginRight="@dimen/dp_5"
+            app:srcCompat="@android:drawable/stat_sys_download"
+            app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+            app:layout_constraintTop_toTopOf="@+id/toolBar"
+            app:layout_constraintEnd_toEndOf="@+id/toolBar"/>
+
+
+        <ImageView
+            android:id="@+id/search_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_search_black_24dp"
+            android:tint="@android:color/white"
+            android:onClick='@{handlers::onClick}'
+            app:layout_constraintBottom_toBottomOf="@+id/downloadPdf"
+            app:layout_constraintEnd_toStartOf="@+id/downloadPdf"
+            app:layout_constraintTop_toTopOf="@+id/downloadPdf"
+            app:srcCompat="@android:drawable/ic_menu_search" />
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="?attr/actionBarSize"
+            android:ellipsize="start"
+            android:hint="Search Address or Name"
+            android:imeOptions="actionDone"
+            android:padding="@dimen/dp_5"
+            android:drawablePadding="@dimen/dp_10"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/back_default"
+            android:drawableTint="@android:color/black"
+            android:drawableRight="@drawable/ic_close_black_24dp"
+            android:background="@android:color/white"
+            android:textColorHint="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textColor="@android:color/black"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolBar"
+            />
+
+        <View
+            android:id="@+id/search_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar"
+            android:background="@color/colorPrimary"/>
+
+        <!--android:drawableLeft="@android:drawable/ic_menu_search"-->
+
+
+       <!-- <ImageView
+            android:id="@+id/searchImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick='@{handlers::onClick}'
+            app:layout_constraintBottom_toTopOf="@+id/editTextSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolBar"
+            app:srcCompat="@android:drawable/ic_search_category_default" />
+-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/RVDisplaySavedList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_line_view" />
+
+
+
+
+
+
+        <!--<android.support.design.widget.FloatingActionButton
+            android:id="@+id/searchFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:useCompatPadding="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_search_black_24dp"
+            android:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/baseView"
+            app:layout_constraintRight_toRightOf="@+id/baseView"/>-->
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

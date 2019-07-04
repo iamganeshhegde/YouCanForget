@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">YouCanForget</string>
+    <string name="app_name_main">You Can Forget</string>
+    <string name="button">Button</string>
+
+    <string name="google_api_key">AIzaSyCEGgQ2N0Wb-SfDaTMgXWxZC6jwnDve4Ak</string>
+
+    <string name="db_name">store</string>
+    <string name="uber_client_id">ofAT5w1iWLGpU8ZQ9rTqlV67kteD6tVI</string>
+    <string name="uber_client_secret">xED4_vmflTMBb_n5h6YSAzbYpFnhhr22GdTaVwtR</string>
+    <!--<string name="uber_client_secret">https://login.uber.com/oauth/v2/authorize?response_type=code&client_id=ofAT5w1iWLGpU8ZQ9rTqlV67kteD6tVI</string>-->
+</resources>
