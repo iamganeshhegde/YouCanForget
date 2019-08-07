@@ -79,6 +79,9 @@ dependencies {
     //iText for converting to pdf
     implementation 'com.itextpdf:itextg:5.5.10'
 
+    implementation 'com.google.android.gms:play-services-maps:12.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+
 }
 repositories {
     mavenCentral()
